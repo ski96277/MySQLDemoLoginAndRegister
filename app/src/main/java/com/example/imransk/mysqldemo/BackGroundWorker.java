@@ -42,12 +42,13 @@ public class BackGroundWorker extends AsyncTask<String, Void, String> {
                 String user_name = params[1];
                 String password = params[2];
 
+ //connect with URL
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
-                httpURLConnection.setDoInput(true);
 
+//sending Data
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
 
@@ -58,7 +59,7 @@ public class BackGroundWorker extends AsyncTask<String, Void, String> {
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 outputStream.close();
-
+//Download Data
                 InputStream inputStream = httpURLConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
                 String result = "";
