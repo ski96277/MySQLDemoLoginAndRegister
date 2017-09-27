@@ -33,9 +33,9 @@ public class BackGroundWorker extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... params) {
         String type = params[0];
 //        using here pc ip address
-        String login_url = "http://192.168.0.100/mysqldemo/login.php";
+        String login_url = "http://192.168.0.101/mysqldemo/login.php";
 
-        String register_url = "http://192.168.0.100/mysqldemo/register.php";
+        String register_url = "http://192.168.0.101/mysqldemo/register.php";
 
         if (type.equals("login")) {
             try {
@@ -145,6 +145,7 @@ public class BackGroundWorker extends AsyncTask<String, Void, String> {
 //        alertDialog.setMessage(result);
 //        alertDialog.show();
         Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
+
     }
 
 
